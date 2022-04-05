@@ -9,9 +9,8 @@ import {InfoContainer,
         TopLine,
         Heading,
         Subtitle,
-        BtnWrap,
-        ImgWrap,
-        Img,
+        BtnWrap
+
       } from './InfoElements3';
 import LogoSection from '../../images/Dog2.svg';
 const InfoSection3 = ({
@@ -43,9 +42,7 @@ const InfoSection3 = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={LogoSection} alt={alt}/>
-              </ImgWrap>
+            
             </Column2>
           </InfoRow>
         </InfoWrapper>

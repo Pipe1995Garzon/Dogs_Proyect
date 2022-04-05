@@ -26,7 +26,7 @@ const Welcome = () => {
         <WelcomeH1>Te doy la bienvenida a Dogs......</WelcomeH1>
         <WelcomeP>Resgistrate y empieza a trabajar con nosotros</WelcomeP>
       <WelcomeBtnWrapper>
-        <Button to="signup" onMouseEnter={onHover}
+        <Button to="regisfundation" onMouseEnter={onHover}
          onMouseLeave={onHover} primary='true'
           dark='true' smooth={true}
            duration={500} spy={true}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../ButtonElements';
+import { ButtonSection2 } from '../ButtonElements';
 import {InfoContainer,
         InfoWrapper,
         InfoRow,
@@ -10,8 +10,7 @@ import {InfoContainer,
         Heading,
         Subtitle,
         BtnWrap,
-        ImgWrap,
-        Img,
+      
       } from './InfoElements2';
 import LogoSection from '../../images/Dog4.svg';
 const InfoSection2 = ({
@@ -30,7 +29,7 @@ const InfoSection2 = ({
                 <Heading lightText={lightText}> {headline} </Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home'
+                  <ButtonSection2 to='home'
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -38,14 +37,12 @@ const InfoSection2 = ({
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
-                  >{buttonLabel}</Button>
+                  >{buttonLabel}</ButtonSection2>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={LogoSection} alt={alt}/>
-              </ImgWrap>
+
             </Column2>
           </InfoRow>
         </InfoWrapper>

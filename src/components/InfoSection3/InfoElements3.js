@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-
+import Dog from '../../images/Dogtwo.jpg';
 export const InfoContainer = styled.div`
   color: #fff;
-  background: ${({ lightBg }) => (lightBg ? '#f9f9f9':'#010606')};
+  background:  url(${Dog});
 
   @media screen and ( max-width:768px ){
     padding: 100px 0;
@@ -52,7 +52,7 @@ export const TextWrapper = styled.div`
 
 export const TopLine = styled.p`
   color: #01bf71;
-  font-size: 15px;
+  font-size: 50px;
   line-height: 15px;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -65,7 +65,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({lightText}) => (lightText ? '#f7f8fa':'#010606')};
+  color: #01bf71;
 
   @media screen and (max-width:480px){
     font-size: 32px;

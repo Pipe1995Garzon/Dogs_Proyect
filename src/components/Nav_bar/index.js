@@ -39,22 +39,22 @@ useEffect(()=>{
               <NavLinks
                to="about" smooth={true}
                 duration={500} spy={true}
-                exact={true} offset={-80} activeClass='active'>Informacion</NavLinks>
+                exact={true} offset={-80} activeClass='active'>Historias</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="discover">Ayuda</NavLinks>
+              <NavLinks to="discover" smooth={true}
+               duration={500} spy={true}
+               exact={true} offset={-80} activeClass='active'>Adopta</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="register">Registro de fundaciones</NavLinks>
+              <NavLinks to="services" smooth={true}
+               duration={500} spy={true}
+               exact={true} offset={-80} activeClass='active'>Objetivos</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="computer_equipment">Lista de caninos</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="machines">Usuarios app</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="sign_up">Registro Administradores</NavLinks>
+              <NavLinks to="register"  smooth={true}
+               duration={500} spy={true}
+               exact={true} offset={-80} activeClass='active'>App</NavLinks>
             </NavItem>
             <NavBtn>
               <NavBtnLink to="signin">Ingresar</NavBtnLink>

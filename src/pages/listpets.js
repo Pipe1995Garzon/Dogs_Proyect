@@ -1,15 +1,15 @@
 import React from 'react';
-import SignIn from '../components/SignIn';
+import ListPets from '../components/ListPets';
 import ScrollToTop from '../components/ScrolltoTop';
 
-const SignInPage = () => {
+
+const ListPetsPage = () => {
   return(
     <>
       <ScrollToTop/>
-      <SignIn/>
-
+      <ListPets/>
     </>
   )
 };
 
-export default SignInPage;
+export default ListPetsPage;
