@@ -4,7 +4,7 @@ import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 
 export const Container = styled.div`
-  min-height: 800px;
+  min-height: auto;
   position: fixed;
   bottom: 0;
   left: 0;
