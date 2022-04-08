@@ -1,24 +1,20 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import Dog from '../../images/dogfunny.jpg';
+import Dog from '../../images/Dogfour.jpg';
 
-export const  ListPetsContainer = styled.div`
-  height: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+  min-height: 692px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
   background-image: url(${Dog});
-
-  @media screen and (max-width: 768px){
-    height: 1100px;
-  }
-  @media screen and (max-width: 480px){
-    height: 1300px;
-  }
 `;
 
-export const ListPetsWrapper = styled.div`
+export const Wrapper = styled.div`
   max-width:1000px;
   margin: 0 auto;
   display: grid;
@@ -37,7 +33,21 @@ export const ListPetsWrapper = styled.div`
   }
 `;
 
-export const ListPetsCard = styled.div`
+
+export const Icon = styled(Link)`
+  margin-left: 32px;
+  margin-top: 32px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+
+  @media screen and (max-width: 480px){
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+`;
+export const Card = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -56,15 +66,13 @@ export const ListPetsCard = styled.div`
   }
 `;
 
-export const ListPetsIcon = styled.img`
+export const ListIcon = styled.img`
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
 `;
 
-
-
-export const ListPetsH1 = styled.h1`
+export const H1 = styled.h1`
   font-size: 2.5rem;
   color #fff;
   margin-bottom: 64px;
@@ -74,12 +82,13 @@ export const ListPetsH1 = styled.h1`
   }
 `;
 
-export const ListPetsH2 = styled.h2`
+export const H2 = styled.h2`
   font-size: 1rem;
   margin-bottom: 10px;
+  text-align:center;
 `;
 
-export const ListPetsP = styled.p`
+export const P = styled.p`
   font-size: 1rem;
   text-align:center;
 `;

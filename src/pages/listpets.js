@@ -1,13 +1,10 @@
 import React from 'react';
-import ListPets from '../components/ListPets';
-import ScrollToTop from '../components/ScrolltoTop';
-
+import ListDog from '../components/List_Dogs';
 
 const ListPetsPage = () => {
   return(
     <>
-      <ScrollToTop/>
-      <ListPets/>
+      <ListDog/>
     </>
   )
 };

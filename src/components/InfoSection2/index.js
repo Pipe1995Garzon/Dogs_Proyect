@@ -10,7 +10,7 @@ import {InfoContainer,
         Heading,
         Subtitle,
         BtnWrap,
-      
+
       } from './InfoElements2';
 import LogoSection from '../../images/Dog4.svg';
 const InfoSection2 = ({
@@ -29,7 +29,7 @@ const InfoSection2 = ({
                 <Heading lightText={lightText}> {headline} </Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonSection2 to='home'
+                  <ButtonSection2 to='listpets'
                     smooth={true}
                     duration={500}
                     spy={true}
