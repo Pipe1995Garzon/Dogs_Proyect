@@ -4,6 +4,7 @@ import Home from './pages';
 import SignInPage from './pages/signin';
 import RegisFundationPage from './pages/regisfundation';
 import ListPetsPage from './pages/listpets';
+import DogImageCustodyPage from './pages/custodydogspictures';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signin" element={<SignInPage/>}/>
         <Route path="/regisfundation" element={<RegisFundationPage/>}/>
         <Route path="/listpets" element={<ListPetsPage/>}/>
+        <Route path="/admiimagesdogscustody" element={<DogImageCustodyPage/>}/>
       </Routes>
     </Router>
   );
