@@ -18,13 +18,13 @@ export const Wrapper = styled.div`
   max-width:1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
   align-items: center;
   grid-gap: 16px;
   padding: 0 50px;
 
   @media screen and (max-width: 1000px){
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
   }
 
   @media screen and (max-width: 768px){
@@ -91,4 +91,34 @@ export const H2 = styled.h2`
 export const P = styled.p`
   font-size: 1rem;
   text-align:center;
+`;
+
+export const H22 = styled.h2`
+  font-size: 1.5rem;
+  color:#fff;
+  margin-bottom: 20px;
+  text-align:center;
+`;
+
+export const Formfile  = styled.input`
+  padding: 16px 16px;
+  margin-bottom: 16px;
+  border:none;
+  border-radius: 32px;
+`;
+
+
+export const FormButton = styled.button`
+  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+  font-size: 15px;
+  cursor: pointer;
+  &:hover{
+     transition: all 0.2s ease-in-out;
+     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+
+   }
 `;
