@@ -5,6 +5,7 @@ import {Link as LinkS} from 'react-scroll';
 
 export const Container = styled.div`
   min-height: auto;
+
   position: fixed;
   bottom: 0;
   left: 0;
@@ -51,7 +52,7 @@ export const FormContent = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   background: #838080;
   max-width: 400px;
   height: auto;

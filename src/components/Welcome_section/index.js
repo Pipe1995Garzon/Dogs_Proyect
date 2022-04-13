@@ -23,8 +23,8 @@ const Welcome = () => {
         <VideoBg autoPlay loop muted src={Video} type='video/mp4'/>
       </WelcomeBg>
       <WelcomeContent>
-        <WelcomeH1>Te doy la bienvenida a Dogs......</WelcomeH1>
-        <WelcomeP>Resgistrate y empieza a trabajar con nosotros</WelcomeP>
+        <WelcomeH1>Bienvenido a Dogs......</WelcomeH1>
+        <WelcomeP>Resgistrata tu fundacion y empieza a trabajar con nosotros</WelcomeP>
       <WelcomeBtnWrapper>
         <Button to="regisfundation" onMouseEnter={onHover}
          onMouseLeave={onHover} primary='true'
