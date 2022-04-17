@@ -50,7 +50,7 @@ export const FormContent = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   background: #838080;
   max-width: 400px;
   height: auto;

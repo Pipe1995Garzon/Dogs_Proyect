@@ -65,7 +65,7 @@ const RegisFundation = () =>{
               <FormInput
                 type='password'
                 name='password'
-                placeholder="tu clave Dogs"
+                placeholder="**********"
                 onChange={handleChange}
               required/>
               <FormButton onMouseEnter={onHover}  onMouseLeave={onHover}
