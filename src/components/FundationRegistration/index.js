@@ -3,6 +3,7 @@ import {Container, FormWrap, Icon, FormContent,Form,
         FormH1, FormLabel, FormInput,FormButton,Text} from './FundationRegistrationElements';
 import {useAuth} from '../../context/authContext';
 import {useNavigate} from 'react-router-dom';
+import Alert from '../Alert';
 
 const RegisFundation = () =>{
 
@@ -72,10 +73,10 @@ const RegisFundation = () =>{
               primary='true' dark='true' smooth={true}
                duration={500} spy={true}  exact={true} offset={-80} activeClass='active' >Registrar</FormButton>
               <Text>Muchas gracias por unirte al proyecto DOGS!</Text>
-              {error && <p>{error}</p>}
+              {error && <Alert message={error}/>}
             </Form>
           </FormContent>
-        </FormWrap>
+          </FormWrap>
       </Container>
     </>
   )

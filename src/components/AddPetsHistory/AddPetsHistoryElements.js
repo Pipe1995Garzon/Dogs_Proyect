@@ -130,3 +130,17 @@ export const LinkLabel = styled.a`
   font-weight:600;
   text-align:center;
 `;
+
+export const Formfile  = styled.input`
+  padding: 16px 16px;
+  margin-bottom: 16px;
+  border:none;
+  border-radius: 32px;
+`;
+
+export const Formtextarea = styled.textarea`
+  padding: 16px 16px;
+  margin-bottom: 16px;
+  border:none;
+  border-radius: 32px;
+`;

@@ -43,7 +43,7 @@ const DogImageCustody = ({ pets }) =>{
   return(
     <>
       <Container>
-      <Icon to="/">Dogs</Icon>
+      <Icon to="/administradorDogs">Dogs</Icon>
       <H22>MANEJO DE IMAGENES MASCOTAS</H22>
         <Wrapper>
         {pets.map(pet => (

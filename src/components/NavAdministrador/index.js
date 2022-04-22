@@ -24,10 +24,13 @@ useEffect(()=>{
       scroll.scrollToTop();
     }
 
-    const {user,logout,loading} = useAuth();
+    const {logout,loading} = useAuth();
     const handleLogout = async () =>{
-      alert('hola')
-      await logout();
+      try{
+          await logout();
+      }catch(error){
+        console.error(error);
+      }
     }
     if(loading) return <h1> loading </h1>
   return (
@@ -35,7 +38,7 @@ useEffect(()=>{
      <IconContext.Provider value={{color: '#fff'}}>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo  to='/' onClick={toggleHome}>
+          <NavLogo  to='/administradorDogs' onClick={toggleHome}>
             Dogs Administrador
           </NavLogo>
           <CellLogo onClick={toggle}>

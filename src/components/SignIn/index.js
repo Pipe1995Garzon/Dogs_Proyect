@@ -1,11 +1,14 @@
 import React,{useState} from 'react';
-import {Container, FormWrap, Icon, FormContent,Form,
-        FormH1, FormLabel, FormInput,FormButton} from './SigninElements';
+import {Container, FormWrap,
+        Icon, FormContent,
+        Form,FormH1, FormLabel,
+        FormInput,FormButton,
+        FormButtonGoogle,LinkLabel} from './SigninElements';
 import {useAuth} from '../../context/authContext';
 import {useNavigate} from 'react-router-dom';
+import Alert from '../Alert';
 
 const  SignIn = () =>{
-
   const[hover, setHover] = useState(false)
   const onHover = () =>{
     setHover(!hover)
@@ -16,7 +19,7 @@ const  SignIn = () =>{
     password:"",
   });
 
-  const {login} = useAuth();
+  const {login,loginWithGoogle} = useAuth();
   const navigate = useNavigate();
   const[error, setError]=useState()
   const handleChange = ({target: {name,value}}) =>
@@ -38,6 +41,16 @@ const  SignIn = () =>{
       setError(error.message)
       //al finalizar todo pendiente seguir personaizando los codigos
     }
+  }
+
+  const handleGoogleSignin = async()=>{
+    try{
+      await loginWithGoogle();
+      navigate('/administradorDogs')
+    }catch(error){
+      setError(error.message)
+    }
+
   }
 
   return(
@@ -65,14 +78,20 @@ const  SignIn = () =>{
               <FormButton onMouseEnter={onHover}  onMouseLeave={onHover}
                primary='true' dark='true' smooth={true}
                duration={500} spy={true}  exact={true} offset={-80} activeClass='active'>Ingresar</FormButton>
-               {error && <p>{error}</p>}
+               {error && <Alert message={error}/>}
+              <LinkLabel href="/recoverypassword">¿Olvidate tu clave?</LinkLabel>
             </Form>
+            <FormButtonGoogle
+              onClick={handleGoogleSignin}
+              onMouseEnter={onHover} onMouseLeave={onHover}
+              primary='true' dark='true'
+              smooth={true} duration={500} spy={true}
+               exact={true} offset={-80} activeClass='active'
+              > Google</FormButtonGoogle>
           </FormContent>
         </FormWrap>
       </Container>
     </>
   )
 }
-
-
 export default SignIn;

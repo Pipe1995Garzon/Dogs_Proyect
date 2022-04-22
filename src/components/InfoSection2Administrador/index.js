@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../ButtonElements';
+import { ButtonSection2 } from '../ButtonElements';
 import {InfoContainer,
         InfoWrapper,
         InfoRow,
@@ -10,14 +10,14 @@ import {InfoContainer,
         Heading,
         Subtitle,
         BtnWrap,
-        ImgWrap,
-        Img,
-      } from './InfoElements';
-import LogoSection from '../../images/dog.svg';
-const InfoSectionAdministrador = ({
+
+      } from './InfoElements2';
+import { ButtonAdminPictures } from '../ButtonElements';
+import LogoSection from '../../images/Dog4.svg';
+const InfoSection2Administrador = ({
   lightBg,id,imgStart,topLine,
-  lightText,headline,darkText,description,description2,
-  buttonLabel,buttonLabel2,img,alt,primary,dark,dark2
+  lightText,headline,darkText,description,
+  buttonLabel,img,alt,primary,dark,dark2
   }) =>{
   return(
     <>
@@ -30,7 +30,7 @@ const InfoSectionAdministrador = ({
                 <Heading lightText={lightText}> {headline} </Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='/crearhistoriamascota'
+                  <ButtonSection2 to='/admiimagesdogscustody'
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -38,26 +38,11 @@ const InfoSectionAdministrador = ({
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
-                  >{buttonLabel}</Button>
-                </BtnWrap>
-                <Subtitle darkText={darkText}>{description2}</Subtitle>
-                <BtnWrap>
-                  <Button to='/gestionarhistoriasmascotas'
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-60}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
-                  >{buttonLabel2}</Button>
+                  >{buttonLabel}</ButtonSection2>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={LogoSection} alt={alt}/>
-              </ImgWrap>
             </Column2>
           </InfoRow>
         </InfoWrapper>
@@ -66,4 +51,4 @@ const InfoSectionAdministrador = ({
   )
 }
 
-export default InfoSectionAdministrador;
+export default InfoSection2Administrador;

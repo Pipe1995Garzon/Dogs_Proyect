@@ -79,7 +79,7 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
-  color: #fff;
+  color: #34495E;
 `;
 
 export const BtnWrap = styled.div`

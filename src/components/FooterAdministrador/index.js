@@ -35,7 +35,7 @@ const FooterAdministrador = () =>{
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/">
+            <SocialLogo to="/administradorDogs">
               Dogs Administrador
             </SocialLogo>
             <WebSitesRights>

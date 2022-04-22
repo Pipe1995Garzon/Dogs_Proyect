@@ -28,7 +28,7 @@ const WelcomeAdministrador = () => {
       </WelcomeBg>
       <WelcomeContent>
         <WelcomeH1>Bienvenido a Dogs..</WelcomeH1>
-        <WelcomeP>{user.email}</WelcomeP>
+        <WelcomeP>{user.displayName || user.email}</WelcomeP>
       <WelcomeBtnWrapper>
         <Button to="regisfundation" onMouseEnter={onHover}
          onMouseLeave={onHover} primary='true'
