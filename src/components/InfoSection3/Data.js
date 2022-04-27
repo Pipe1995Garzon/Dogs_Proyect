@@ -4,7 +4,7 @@ export const homeObjThree={
   lightText: false ,
   lightTextDesc: false,
   topLine: '...',
-  headline: 'Mira...',
+  headline: '¡Oye!',
   description: '...',
   buttonLabel: 'Descargar App',
   imgStart: true,

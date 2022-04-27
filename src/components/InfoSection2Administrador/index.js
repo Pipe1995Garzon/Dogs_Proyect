@@ -30,7 +30,7 @@ const InfoSection2Administrador = ({
                 <Heading lightText={lightText}> {headline} </Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <ButtonSection2 to='/admiimagesdogscustody'
+                  <ButtonSection2 to='/adddogs'
                     smooth={true}
                     duration={500}
                     spy={true}

@@ -61,6 +61,14 @@ const  SignIn = () =>{
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Iniciar Sesion</FormH1>
+              <FormButtonGoogle
+                onClick={handleGoogleSignin}
+                onMouseEnter={onHover} onMouseLeave={onHover}
+                primary='true' dark='true'
+                smooth={true} duration={500} spy={true}
+                 exact={true} offset={-80} activeClass='active'
+                >Inicio con Google</FormButtonGoogle>
+              <FormLabel htmlFor='for'>O tambien </FormLabel>  
               <FormLabel htmlFor='for'>Correo electronico</FormLabel>
               <FormInput
                 type='email'
@@ -81,13 +89,6 @@ const  SignIn = () =>{
                {error && <Alert message={error}/>}
               <LinkLabel href="/recoverypassword">¿Olvidate tu clave?</LinkLabel>
             </Form>
-            <FormButtonGoogle
-              onClick={handleGoogleSignin}
-              onMouseEnter={onHover} onMouseLeave={onHover}
-              primary='true' dark='true'
-              smooth={true} duration={500} spy={true}
-               exact={true} offset={-80} activeClass='active'
-              > Google</FormButtonGoogle>
           </FormContent>
         </FormWrap>
       </Container>

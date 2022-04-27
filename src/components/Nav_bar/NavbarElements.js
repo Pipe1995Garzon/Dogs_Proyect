@@ -3,7 +3,7 @@ import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 
 export const Nav = styled.nav`
-  background: ${({scrollNav}) => (scrollNav ? '#838080': 'transparent')};
+  background: ${({scrollNav}) => (scrollNav ? '#466973': 'transparent')};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -40,6 +40,13 @@ export const NavLogo = styled(LinkR)`
   margin-left: 24;
   font-weight: bold;
   text-decoration: none;
+  animation-name: dogsanimation;
+  animation-duration: 6s;
+
+  @keyframes dogsanimation{
+    from{color: #fff;}
+    to{color: #01bf71}
+  }
 `;
 
 export const CellLogo = styled.div`
@@ -81,7 +88,13 @@ export const NavLinks = styled(LinkS)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  animation-name: dogsanimation;
+  animation-duration: 5s;
 
+  @keyframes dogsanimation{
+    from {color:#fff;}
+    to{color:#01bf71}
+  }
   &.active{
     border-bottom: 3px solid #01bf71;
   }

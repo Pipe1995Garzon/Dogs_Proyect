@@ -10,11 +10,14 @@ const  AddHistoryPets = () =>{
   const onHover = () =>{
     setHover(!hover)
   }
-
+//guardar los valores que traen los inputs
   const [user, setUser] = useState({
     email:"",
     password:"",
   });
+//trae los datos de los inputs
+  const handleChange = ({target: {name,value}}) =>
+    setUser({...user, [name]:value})
 
 
   return(
@@ -27,16 +30,18 @@ const  AddHistoryPets = () =>{
               <FormLabel htmlFor='for'>Nombre de la mascota</FormLabel>
               <FormInput
                 type='text'
-                name='nombremascota'
+                name='nombre'
                 placeholder="Pelusa"
+                onChange={handleChange}
                 required/>
               <FormLabel htmlFor='for'>Subir Foto</FormLabel>
               <Formfile id="fileinput"  type='file' name="fotomascota"/>
               <FormLabel htmlFor='for'>Historia de la mascota</FormLabel>
               <Formtextarea
                 type="text"
-                name='nombremascota'
-                placeholder="Historia de pelusa"
+                name='descripcion'
+                placeholder="Historia de Pelusa"
+                onChange={handleChange}
                 required/>
               <FormButton
                 onMouseEnter={onHover}

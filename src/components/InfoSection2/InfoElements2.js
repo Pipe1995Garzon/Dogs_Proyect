@@ -59,6 +59,14 @@ export const TopLine = styled.p`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(2);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
+
 `;
 
 export const Heading = styled.h1`
@@ -67,6 +75,13 @@ export const Heading = styled.h1`
   line-height: 1.1;
   font-weight: 600;
   color: #34495E;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(2);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 
   @media screen and (max-width:480px){
     font-size: 32px;
@@ -80,6 +95,13 @@ export const Subtitle = styled.p`
   line-height: 24px;
   font-weight: 600;
   color: #fff;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(2);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 `;
 
 export const BtnWrap = styled.div`

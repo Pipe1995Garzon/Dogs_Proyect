@@ -51,14 +51,14 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #838080;
-  max-width: 400px;
-  height: auto;
+  background: #466973;
+  max-width: 600px;
+  height: 600;
   width: 100%;
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 30px 32px;
+  padding: 60px 82px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0 , 0, 0.9);
 

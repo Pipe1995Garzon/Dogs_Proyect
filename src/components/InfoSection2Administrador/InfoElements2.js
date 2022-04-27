@@ -52,13 +52,19 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: #01bf71;
+  color: #fff;
+  font-weight: 700;
   font-size: 20px;
   line-height: 15px;
-  font-weight: bold;
   letter-spacing: 1.4px;
-  text-transform: uppercase;
   margin-bottom: 16px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 `;
 
 export const Heading = styled.h1`
@@ -66,7 +72,14 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: #34495E;
+  color: #ca8237;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 
   @media screen and (max-width:480px){
     font-size: 32px;
@@ -79,7 +92,14 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
-  color: #34495E;
+  color: #2d55c5;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 `;
 
 export const BtnWrap = styled.div`

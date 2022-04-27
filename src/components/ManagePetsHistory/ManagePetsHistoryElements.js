@@ -71,7 +71,6 @@ export const Card = styled.div`
 export const ColumnCard = styled.div`
   column-count: 3;
   height: 100px;
-
 `;
 
 export const ListIcon = styled.img`

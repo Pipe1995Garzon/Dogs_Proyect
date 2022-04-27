@@ -4,13 +4,14 @@ import Home from './pages';
 import SignInPage from './pages/signin';
 import RegisFundationPage from './pages/regisfundation';
 import ListPetsPage from './pages/listpets';
-import DogImageCustodyPage from './pages/custodydogspictures';
+import AddDogsPage from './pages/adddogspage';
 import RecoveryPasswordPage from './pages/recoverypassword';
 import {ProtectedRoute}  from './components/ProtectedRoute';
 import AdminDogs from './pages/admindogs';
 import AddPetsHistoryPage from './pages/addhistorypage';
 import ManageAllPetsHistory from './pages/managepetshistory';
 import  AuthProvider  from './context/authContext';
+
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
           <Route path="/listpets" element={<ListPetsPage/>}/>
           <Route path="/recoverypassword" element={<RecoveryPasswordPage/>}/>
           <Route
-              path="/admiimagesdogscustody"
+              path="/adddogs"
               element={
                 <ProtectedRoute>
-                  <DogImageCustodyPage/>
+                  <AddDogsPage/>
                 </ProtectedRoute>
                 }
                 />
