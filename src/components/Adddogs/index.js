@@ -38,11 +38,12 @@ const  AddDogs = () =>{
                 onChange={handleChange}
                 required/>
               <FormLabel htmlFor='for'>Subir Foto</FormLabel>
-              <Formfile id="fileinput"  type='file' name="fotomascota"/>
+              <Formfile id="fileinput"  type='file' name="foto"/>
               <FormLabel htmlFor='for'>edad mascota</FormLabel>
               <FormInput
                 type="number"
                 name="edad"
+                pattern="^[0-9]"
                 placeholder="Digitar edad de la mascota"
                 onChange={handleChange}
                 required
@@ -92,6 +93,21 @@ const  AddDogs = () =>{
                 <option value="2">Ya tengo un hogar !!!!!</option>
               </Select>
             </ColumnCard>
+            <FormLabel htmlFor='for'>Tu nombre</FormLabel>
+            <FormInput
+              type='text'
+              name='usuario'
+              placeholder=""
+              onChange={handleChange}
+              required/>
+            <FormLabel htmlFor='for'>numero de contacto</FormLabel>
+            <FormInput
+              type="number"
+              name="numero_contacto"
+              placeholder="312***** necsario"
+              onChange={handleChange}
+              required
+            />
               <FormButton
                 onMouseEnter={onHover}
                 onMouseLeave={onHover}
