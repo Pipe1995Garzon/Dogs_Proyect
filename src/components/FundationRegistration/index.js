@@ -45,7 +45,7 @@ const RegisFundation = () =>{
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">Dogs</Icon>
+          <Icon to="/">Dogs 🐾</Icon>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Formulario de registro</FormH1>
@@ -72,7 +72,7 @@ const RegisFundation = () =>{
               <FormButton onMouseEnter={onHover}  onMouseLeave={onHover}
               primary='true' dark='true' smooth={true}
                duration={500} spy={true}  exact={true} offset={-80} activeClass='active' >Registrar</FormButton>
-              <Text>Muchas gracias por unirte al proyecto DOGS!</Text>
+              <Text>Muchas gracias por unirte al proyecto DOGS! 🐾</Text>
               {error && <Alert message={error}/>}
             </Form>
           </FormContent>

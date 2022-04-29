@@ -29,7 +29,7 @@ useEffect(()=>{
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo  to='/' onClick={toggleHome}>
-            Dogs
+            Dogs 🐾
           </NavLogo>
           <CellLogo onClick={toggle}>
             <FaBars />

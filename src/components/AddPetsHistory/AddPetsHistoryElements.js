@@ -52,8 +52,8 @@ export const FormContent = styled.div`
 
 export const Form = styled.form`
   background: #466973;
-  max-width: 600px;
-  height: 600;
+  max-width: auto;
+  height: auto;
   width: 100%;
   z-index: 1;
   display: grid;
@@ -88,6 +88,13 @@ export const FormInput  = styled.input`
   margin-bottom: 32px;
   border:none;
   border-radius: 32px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 `;
 
 
@@ -143,6 +150,13 @@ export const Formtextarea = styled.textarea`
   margin-bottom: 16px;
   border:none;
   border-radius: 32px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
 `;
 
 
@@ -171,4 +185,9 @@ export const Select = styled.select`
     transition: all 0.2 ease-in-out;
     cursor: pointer;
   }
+`;
+
+export const ColumnCard = styled.div`
+  column-count: 2;
+  height: 100px;
 `;

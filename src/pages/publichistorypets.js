@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from 'react';
-import ManagePetsHistory from '../components/ManagePetsHistory';
+import PublicHistory from '../components/PublicHistoryPets';
 import ScrollToTop from '../components/ScrolltoTop';
 
-const ManageAllPetsHistory = () =>{
+const PublicHistoryPets = () =>{
   const [history, sethistory] = useState([]);
   useEffect(()=>{
     const getHistory = () =>{
-        fetch('http://localhost:3500/gestion_mascotas/historias')
+        fetch('http://localhost:3500/gestion_mascotas/historiaspublicasdemascotas')
         .then(res=>res.json())
         .then(res=>sethistory(res))
     }
@@ -16,9 +16,9 @@ const ManageAllPetsHistory = () =>{
   return(
     <>
       <ScrollToTop/>
-      <ManagePetsHistory history={history}/>
+      <PublicHistory history={history}/>
     </>
   )
 };
 
-export default ManageAllPetsHistory;
+export default PublicHistoryPets;

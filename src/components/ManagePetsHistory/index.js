@@ -5,7 +5,7 @@ import {Container,Wrapper,Icon,
        FormButtonEliminarHistoria} from './ManagePetsHistoryElements';
 import Icon1 from '../../images/foundation.svg';
 
-const ManagePetsHistory= ({historiaMascotas}) => {
+const ManagePetsHistory= ({history}) => {
   const[hover, setHover] = useState(false)
   const onHover = () =>{
     setHover(!hover)
@@ -16,12 +16,13 @@ const ManagePetsHistory= ({historiaMascotas}) => {
         <Icon to="/administradorDogs">Dogs</Icon>
         <H22>GESTIONAR HISTORIAS DE MASCOTAS</H22>
           <Wrapper>
-            {historiaMascotas.map((mascota)=>{
+            {history.map((mascota)=>{
               return(
-                <Card>
+                <Card key={mascota.id_historia}>
                   <ListIcon src={Icon1}/>
                   <H2>{mascota.nombre}</H2>
-                  <P>{mascota.historia}</P>
+                  <P>{mascota.descripcion}</P>
+                  <P>{mascota.usuario}</P>
                   <ColumnCard>
                   <FormButtonVerMascota
                     onMouseEnter={onHover}  onMouseLeave={onHover}

@@ -32,6 +32,25 @@ export const Icon = styled(Link)`
   color: #fff;
   font-weight: 700;
   font-size: 32px;
+  animation-name: dogsanimation;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction:alternate;
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
+
+  @keyframes dogsanimation {
+    0%{color:#fff; left:0px; top:0px;}
+    25%{color:#4f1056; left:200px; top:0px;}
+    50%{color:#04284c; left:200px; top:200px;}
+    75%{color:#adc51a; left:0px; top:200px;}
+    100%{color:#fff; left:0px; top:0px}
+  }
 
   @media screen and (max-width: 480px){
     margin-left: 16px;

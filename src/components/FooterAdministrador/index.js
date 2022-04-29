@@ -36,7 +36,7 @@ const FooterAdministrador = () =>{
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/administradorDogs">
-              Dogs Administrador
+              Dogs Administrador 🐾
             </SocialLogo>
             <WebSitesRights>
               Dogs © {new Date().getFullYear()} todos los derechos reservados.

@@ -57,7 +57,7 @@ const  SignIn = () =>{
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">Dogs</Icon>
+          <Icon to="/">Dogs 🐾</Icon>
           <FormContent>
             <Form onSubmit={handleSubmit}>
               <FormH1>Iniciar Sesion</FormH1>
@@ -68,7 +68,7 @@ const  SignIn = () =>{
                 smooth={true} duration={500} spy={true}
                  exact={true} offset={-80} activeClass='active'
                 >Inicio con Google</FormButtonGoogle>
-              <FormLabel htmlFor='for'>O tambien </FormLabel>  
+              <FormLabel htmlFor='for'>O tambien </FormLabel>
               <FormLabel htmlFor='for'>Correo electronico</FormLabel>
               <FormInput
                 type='email'
@@ -87,7 +87,7 @@ const  SignIn = () =>{
                primary='true' dark='true' smooth={true}
                duration={500} spy={true}  exact={true} offset={-80} activeClass='active'>Ingresar</FormButton>
                {error && <Alert message={error}/>}
-              <LinkLabel href="/recoverypassword">¿Olvidate tu clave?</LinkLabel>
+              <LinkLabel href="/recoverypassword">¿Olvidate tu clave? 🐾</LinkLabel>
             </Form>
           </FormContent>
         </FormWrap>

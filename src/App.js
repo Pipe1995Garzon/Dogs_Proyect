@@ -4,6 +4,7 @@ import Home from './pages';
 import SignInPage from './pages/signin';
 import RegisFundationPage from './pages/regisfundation';
 import ListPetsPage from './pages/listpets';
+import PublicHistoryPets from './pages/publichistorypets';
 import AddDogsPage from './pages/adddogspage';
 import RecoveryPasswordPage from './pages/recoverypassword';
 import {ProtectedRoute}  from './components/ProtectedRoute';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/regisfundation" element={<RegisFundationPage/>}/>
           <Route path="/listpets" element={<ListPetsPage/>}/>
           <Route path="/recoverypassword" element={<RecoveryPasswordPage/>}/>
+          <Route path="/publichistorypets" element={<PublicHistoryPets/>}/>
           <Route
               path="/adddogs"
               element={

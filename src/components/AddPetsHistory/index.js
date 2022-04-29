@@ -3,30 +3,36 @@ import {Container, FormWrap,
         Icon, FormContent,
         Form,FormH1, FormLabel,
         FormInput,FormButton,Select,
-        LinkLabel,Formfile,Formtextarea} from './AddPetsHistoryElements';
+        LinkLabel,Formfile,Formtextarea,ColumnCard} from './AddPetsHistoryElements';
+import {useAuth} from '../../context/authContext';
 
-const  AddHistoryPets = () =>{
+const  AddHistoryPets = ({breed}) =>{
   const[hover, setHover] = useState(false)
   const onHover = () =>{
     setHover(!hover)
   }
+
+//me traigo el usuario que va a hacer la publicacion
+const {user} = useAuth();
+
 //guardar los valores que traen los inputs
-  const [user, setUser] = useState({
+  const [usuario, setUsuario] = useState({
     email:"",
     password:"",
   });
 //trae los datos de los inputs
   const handleChange = ({target: {name,value}}) =>
-    setUser({...user, [name]:value})
+    setUsuario({...usuario, [name]:value})
 
 
   return(
     <>
       <Container>
         <FormWrap>
-          <Icon to="/administradorDogs">Dogs</Icon>
+          <Icon to="/administradorDogs">Dogs 🐾</Icon>
           <FormContent>
             <Form>
+              <ColumnCard>
               <FormLabel htmlFor='for'>Nombre de la mascota</FormLabel>
               <FormInput
                 type='text'
@@ -36,6 +42,7 @@ const  AddHistoryPets = () =>{
                 required/>
               <FormLabel htmlFor='for'>Subir Foto</FormLabel>
               <Formfile id="fileinput"  type='file' name="foto"/>
+              </ColumnCard>
               <FormLabel htmlFor='for'>Historia de la mascota</FormLabel>
               <Formtextarea
                 type="text"
@@ -49,13 +56,25 @@ const  AddHistoryPets = () =>{
                 </FormLabel>
                 <Select>
                   <option name="id_raza" value="" hidden>
-                    Opcion
+                    Click aqui
                   </option>
-                  <option value="1">Mixta</option>
-                  <option value="2">Dalmata</option>
-                  <option value="3">Salchicha</option>
-                  <option value="4">Labrador</option>
+                  {breed.map(raza =>(
+                    <option key={raza.id_raza} value={raza.id_raza}>{raza.raza}</option>
+                  ))}
                 </Select>
+                <FormLabel
+                  htmlFor='for'>
+                </FormLabel>
+                <FormLabel
+                  htmlFor='for'>
+                </FormLabel>
+                <FormLabel htmlFor='for'>usuario</FormLabel>
+                <FormInput
+                  type='text'
+                  name='usuario'
+                  value={user.displayName || user.email}
+                  onChange={handleChange}
+                  readonly/>
               <FormButton
                 onMouseEnter={onHover}
                 onMouseLeave={onHover}

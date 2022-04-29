@@ -5,7 +5,7 @@ const ListPetsPage = () => {
   const [pets,setPets] = useState([]);
   useEffect(()=>{
     const getPets = () =>{
-      fetch('http://localhost:3500/gestion_mascotas/lista_mascotas').then(res=>res.json()).then(res=>setPets(res));
+      fetch('http://localhost:3500/gestion_mascotas/listapublicamascotas').then(res=>res.json()).then(res=>setPets(res));
     }
     getPets();
   },[])

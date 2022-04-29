@@ -40,7 +40,7 @@ const  RecoveryPassword = () =>{
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">Dogs</Icon>
+          <Icon to="/">Dogs 🐾</Icon>
           <FormContent>
             <Form onSubmit={handleResetPassword}>
               <FormH1>Recuperar Clave</FormH1>
@@ -60,7 +60,7 @@ const  RecoveryPassword = () =>{
                 Recuperar clave
               </FormButton>
                {error && <Alert message={error}/>}
-              <LinkLabel href="/">Volver</LinkLabel>
+              <LinkLabel href="/">Volver 🐾</LinkLabel>
             </Form>
           </FormContent>
         </FormWrap>

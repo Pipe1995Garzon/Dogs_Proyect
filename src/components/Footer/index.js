@@ -36,7 +36,7 @@ const Footer = () =>{
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/">
-              Dogs
+              Dogs 🐾
             </SocialLogo>
             <WebSitesRights>
               Dogs © {new Date().getFullYear()} todos los derechos reservados.

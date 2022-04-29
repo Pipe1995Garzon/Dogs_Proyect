@@ -39,7 +39,7 @@ useEffect(()=>{
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo  to='/administradorDogs' onClick={toggleHome}>
-            Dogs Administrador
+            Dogs Administrador 🐾
           </NavLogo>
           <CellLogo onClick={toggle}>
             <FaBars />
