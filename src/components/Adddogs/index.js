@@ -8,7 +8,7 @@ import {Container, FormWrap,
 import {useAuth} from '../../context/authContext';
 
 
-const  AddDogs = ({breed,vaccine,dogstate}) =>{
+const  AddDogs = ({breed,vaccine,dogstate,mascota,setMascota}) =>{
   const[hover, setHover] = useState(false)
   const onHover = () =>{
     setHover(!hover)
@@ -16,16 +16,40 @@ const  AddDogs = ({breed,vaccine,dogstate}) =>{
 
 //me traigo el usuario que va a realizar la publicacion
 const{user} = useAuth();
+//actualiza el estado con los valores que se van a guardar
+const handleChange = ({target:{name,value}})=>
+      setMascota({...mascota, [name]:value})
+//nos traemos y manejamos asi los datos del formulario para una mejor gestion
+let{nombre,foto,edad,descripcion,id_raza,id_vacuna,id_estado,usuario,numero_contacto} = mascota;
 
-//guardar los valores que traen los inputs
-  const [usuario, setUsuario] = useState({
-    email:"",
-    password:"",
-  });
-//trae los datos de los inputs
-  const handleChange = ({target: {name,value}}) =>
-    setUsuario({...usuario, [name]:value})
 
+const handleSubmit = () =>{
+    if(nombre === '' || edad<0 || numero_contacto===''){
+      alert('digite los datos correctamente');
+      return
+    }
+    const requestInit={
+      method:'POST',
+      headers:{'Content-Type': 'application/json'},
+      body: JSON.stringify(mascota)
+    }
+    //consulta
+    fetch('http://localhost:3500/gestion_mascotas/resgitrar_mascotas',requestInit)
+    .then(res=>res.json())
+    .then(res=>console.log(res))
+
+    setMascota({
+      nombre:"",
+      foto:"",
+      edad:"",
+      descripcion:"",
+      id_raza:0,
+      id_vacuna:0,
+      id_estado:0,
+      usuario:`${user.displayName || user.email}`,
+      numero_contacto:""
+    })
+}
 
   return(
     <>
@@ -33,7 +57,7 @@ const{user} = useAuth();
         <FormWrap>
           <Icon to="/administradorDogs">Dogs</Icon>
           <FormContent>
-            <Form>
+            <Form onSubmit={handleSubmit}>
             <FormH1>Registrame aqui!!! 🐾</FormH1>
             <ColumnCard>
               <FormLabel htmlFor='for'>Nombre de la mascota</FormLabel>
@@ -44,7 +68,7 @@ const{user} = useAuth();
                 onChange={handleChange}
                 required/>
               <FormLabel htmlFor='for'>Subir Foto</FormLabel>
-              <Formfile id="fileinput"  type='file' name="foto"/>
+              <Formfile id="fileinput" onChange={handleChange} type='file' name="foto"/>
               <FormLabel htmlFor='for'>edad mascota</FormLabel>
               <FormInput
                 type="number"
@@ -67,36 +91,36 @@ const{user} = useAuth();
                 htmlFor='for'>
                   Raza
               </FormLabel>
-              <Select>
-                <option name="id_raza" value="" hidden>
+              <Select name="id_raza" onChange={handleChange}>
+                <option hidden>
                   Click
                 </option>
                 {breed.map(raza=>(
-                  <option key={raza.id_raza} value={raza.id_raza} name="id_raza">{raza.raza}</option>
+                  <option key={raza.id_raza} value={raza.id_raza}>{raza.raza}</option>
                 ))}
               </Select>
               <FormLabel
                 htmlFor='for'>
                 Vacuna
               </FormLabel>
-              <Select>
-                <option name="id_vacuna" value="" hidden>
+              <Select name="id_vacuna" onChange={handleChange}>
+                <option hidden>
                   Click
                 </option>
                 {vaccine.map(vacuna=>(
-                  <option key={vacuna.id_vacuna} value={vacuna.id_vacuna} name="id_vacuna">{vacuna.vacuna}</option>
+                  <option key={vacuna.id_vacuna} value={vacuna.id_vacuna}>{vacuna.vacuna}</option>
                 ))}
               </Select>
               <FormLabel
                 htmlFor='for'>
                 Estado
               </FormLabel>
-              <Select>
-                <option name="id_estado" value="" hidden>
+              <Select name="id_estado" onChange={handleChange}>
+                <option hidden>
                   Click
                 </option>
                 {dogstate.map(estado=>(
-                  <option key={estado.id_estado}  value={estado.id_estado} name="id_estado">{estado.estado}</option>
+                  <option key={estado.id_estado}  value={estado.id_estado}>{estado.estado}</option>
                 ))}
               </Select>
             </ColumnCard>
@@ -106,7 +130,7 @@ const{user} = useAuth();
               name='usuario'
               value={user.displayName || user.email}
               onChange={handleChange}
-              readonly/>
+              disabled/>
             <FormLabel htmlFor='for'>numero de contacto</FormLabel>
             <FormInput
               type="number"
