@@ -4,6 +4,7 @@ import {useAuth} from '../context/authContext';
 const AddPetsHistoryPage = () => {
   const {user} = useAuth();
 
+//gestiona los datos que se van a registrar
   const [historia, setHistoria] = useState({
     nombre:"",
     foto:"",
@@ -11,6 +12,8 @@ const AddPetsHistoryPage = () => {
     id_raza:0,
     usuario: `${user.displayName || user.email}`
   })
+
+
 
   //listar razas de mascotas desde la db
   const [breed, setbreed] = useState([]);

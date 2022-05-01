@@ -17,7 +17,7 @@ import LogoSection from '../../images/Dog4.svg';
 const InfoSection2Administrador = ({
   lightBg,id,imgStart,topLine,
   lightText,headline,darkText,description,
-  buttonLabel,img,alt,primary,dark,dark2
+  buttonLabel,buttonLabel2,img,alt,primary,dark,dark2
   }) =>{
   return(
     <>
@@ -39,6 +39,15 @@ const InfoSection2Administrador = ({
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >{buttonLabel}</ButtonSection2>
+                  <ButtonSection2 to='/gestionarmascotas'
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    offset={-60}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 1 : 0}
+                    dark2={dark2 ? 1 : 0}
+                  >{buttonLabel2}</ButtonSection2>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

@@ -4,6 +4,7 @@ import Home from './pages';
 import SignInPage from './pages/signin';
 import RegisFundationPage from './pages/regisfundation';
 import ListPetsPage from './pages/listpets';
+import ListPetsAdminPage from './pages/listpetsadmin';
 import PublicHistoryPets from './pages/publichistorypets';
 import AddDogsPage from './pages/adddogspage';
 import RecoveryPasswordPage from './pages/recoverypassword';
@@ -54,6 +55,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ManageAllPetsHistory/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/gestionarmascotas"
+            element={
+              <ProtectedRoute>
+                <ListPetsAdminPage/>
               </ProtectedRoute>
             }
           />

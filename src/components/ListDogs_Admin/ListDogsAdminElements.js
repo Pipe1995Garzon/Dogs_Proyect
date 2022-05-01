@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import Dog from '../../images/Dogs_six.jpg';
+import Dog from '../../images/Dogfour.jpg';
 
 export const Container = styled.div`
   min-height: auto;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
   padding: 0 50px;
 
   @media screen and (max-width: 1000px){
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
   }
 
   @media screen and (max-width: 768px){
@@ -33,10 +33,51 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  max-width: auto;
-  height: auto;
+
+export const Icon = styled(Link)`
+  margin-left: 32px;
+  margin-top: 32px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+
+  @media screen and (max-width: 480px){
+    margin-left: 16px;
+    margin-top: 8px;
+  }
 `;
+export const Card = styled.div`
+  background: #466973;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+  max-height: 1000px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    transform: scale(1.02);
+    transition: all 0.2 ease-in-out;
+    cursor: pointer;
+  }
+`;
+
+export const ColumnCard = styled.div`
+  column-count: 3;
+  height: 100px;
+`;
+
+
+export const ListIcon = styled.img`
+  height: 160px;
+  width: 160px;
+  margin-bottom: 10px;
+`;
+
 
 export const FormInput  = styled.input`
   width:100%;
@@ -68,51 +109,6 @@ export const Formtextarea = styled.textarea`
   }
 `;
 
-
-
-export const Icon = styled(Link)`
-  margin-left: 32px;
-  margin-top: 32px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  font-size: 32px;
-
-  @media screen and (max-width: 480px){
-    margin-left: 16px;
-    margin-top: 8px;
-  }
-`;
-export const Card = styled.div`
-  background: #a99696;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 10px;
-  max-height: 600px;
-  padding: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
-
-  &:hover{
-    transform: scale(1.02);
-    transition: all 0.2 ease-in-out;
-    cursor: pointer;
-  }
-`;
-
-export const ColumnCard = styled.div`
-  column-count: 2;
-  height: 100px;
-`;
-
-export const ListIcon = styled.img`
-  height: 160px;
-  width: 160px;
-  margin-bottom: 10px;
-`;
-
 export const H1 = styled.h1`
   font-size: 2.5rem;
   color #fff;
@@ -134,18 +130,53 @@ export const P = styled.p`
   text-align:center;
 `;
 
-export const H22 = styled.h2`
-  font-size: 1.5rem;
-  color:#fff;
-  margin-bottom: 20px;
-  text-align:center;
+export const FormButtonVerMascota = styled.button`
+  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+  font-size: 15px;
+  font-weight:600;
+  cursor: pointer;
+  &:hover{
+     transition: all 0.2s ease-in-out;
+     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+
+   }
 `;
 
-export const Formfile  = styled.input`
-  padding: 16px 16px;
-  margin-bottom: 16px;
-  border:none;
-  border-radius: 32px;
+export const FormButtonEditar = styled.button`
+  background: ${({ primary }) => (primary ? '#5a61b3' : '#01BF71')};
+  display:flex;
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+  font-size: 15px;
+  font-weight:600;
+  cursor: pointer;
+  &:hover{
+     transition: all 0.2s ease-in-out;
+     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+
+   }
+`;
+
+export const FormButtonEliminar= styled.button`
+  background: ${({ primary }) => (primary ? '#e91e63' : '#010606')};
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
+  font-size: 15px;
+  font-weight:600;
+  cursor: pointer;
+  &:hover{
+     transition: all 0.2s ease-in-out;
+     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+
+   }
 `;
 
 
@@ -174,56 +205,4 @@ export const Select = styled.select`
     transition: all 0.2 ease-in-out;
     cursor: pointer;
   }
-`;
-
-export const FormButtonVerMascota = styled.button`
-  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
-  width:320px;
-  padding: 10px 0;
-  border: none;
-  border-radius: 20px;
-  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
-  font-size: 15px;
-  font-weight:600;
-  cursor: pointer;
-  &:hover{
-     transition: all 0.2s ease-in-out;
-     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
-
-   }
-`;
-
-export const FormButtonEditarHistoria = styled.button`
-  background: ${({ primary }) => (primary ? '#5a61b3' : '#01BF71')};
-  width:100%;
-  display:flex;
-  padding: 10px 0;
-  border: none;
-  border-radius: 20px;
-  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
-  font-size: 15px;
-  font-weight:600;
-  cursor: pointer;
-  &:hover{
-     transition: all 0.2s ease-in-out;
-     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
-
-   }
-`;
-
-export const FormButtonEliminarHistoria = styled.button`
-  background: ${({ primary }) => (primary ? '#e91e63' : '#010606')};
-  width:320px;
-  padding: 10px 0;
-  border: none;
-  border-radius: 20px;
-  color: ${({ dark }) => (dark ? '#010606' : '#fff')};
-  font-size: 15px;
-  font-weight:600;
-  cursor: pointer;
-  &:hover{
-     transition: all 0.2s ease-in-out;
-     background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
-
-   }
 `;

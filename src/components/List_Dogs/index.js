@@ -10,13 +10,13 @@ const ListDog = ({ pets }) =>{
       <Icon to="/">Dogs</Icon>
         <Wrapper>
         {pets.map(pet => (
-            <Card key={pet.id_dog_custodia}>
+            <Card key={pet.id_dog}>
               <ListIcon src={Icon1}/>
               <H2>{pet.nombre}</H2>
               <P>Edad: {pet.edad}</P>
               <P>Raza: {pet.raza}</P>
               <P>Vacuna: {pet.vacuna}</P>
-              <P>YO {pet.nombre} {pet.estado}</P>
+              <P> {pet.nombre} {pet.estado}</P>
               <P>Descripcion:</P>
               <P>{pet.descripcion}</P>
               <P>Contacto:{pet.usuario}</P>
