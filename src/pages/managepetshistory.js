@@ -22,11 +22,14 @@ const ManageAllPetsHistory = () =>{
     //listar raza de mascotas desde la bd
     const [breed, setbreed] = useState([]);
 
+    //usuario clave para listar historias individueles
+  const[usuario, setUsuario] = useState(`${user.displayName || user.email}`)
+
   //gestiona los datos que se actualizan despues de eliminar
   const [updated, setUpdated] = useState(false);
   useEffect(()=>{
     const getHistory = () =>{
-        fetch('http://localhost:3500/gestion_mascotas/historias')
+        fetch(`http://localhost:3500/gestion_mascotas/listaindividual/${usuario}`)
         .then(res=>res.json())
         .then(res=>sethistory(res))
     }

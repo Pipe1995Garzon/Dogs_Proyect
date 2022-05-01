@@ -29,9 +29,12 @@ const ListPetsAdminPage = () => {
   //gestiona los datos que se actualizan
   const [petsUpdated, setpetsUpdated]=useState(false)
 
+  //usuario clave para listar historias individueles
+  const[usuario, setUsuario] = useState(`${user.displayName || user.email}`)
+
   useEffect(()=>{
     const getPets = () =>{
-      fetch('http://localhost:3500/gestion_mascotas/listapublicamascotas')
+      fetch(`http://localhost:3500/gestion_mascotas/mascotasindividuales/${usuario}`)
       .then(res=>res.json())
       .then(res=>setPets(res));
     }
