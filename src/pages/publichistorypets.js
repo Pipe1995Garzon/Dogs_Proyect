@@ -6,7 +6,7 @@ const PublicHistoryPets = () =>{
   const [history, sethistory] = useState([]);
   useEffect(()=>{
     const getHistory = () =>{
-        fetch('http://localhost:3500/gestion_mascotas/historiaspublicasdemascotas')
+        fetch('http://localhost:3500/gestion_mascotas/historias')
         .then(res=>res.json())
         .then(res=>sethistory(res))
     }

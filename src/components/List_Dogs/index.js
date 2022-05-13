@@ -11,7 +11,7 @@ const ListDog = ({ pets }) =>{
         <Wrapper>
         {pets.map(pet => (
             <Card key={pet.id_dog}>
-              <ListIcon src={Icon1}/>
+              <ListIcon src={'http://localhost:3500/'+pet.foto}/>
               <H2>{pet.nombre}</H2>
               <P>Edad: {pet.edad}</P>
               <P>Raza: {pet.raza}</P>

@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import {Container,Wrapper,Icon,
         Card,ListIcon,P,H22,
         FormButtonVerMascota,FormButtonEditarHistoria,
-        Form, FormButtonEliminarHistoria,FormInput,Select,
-       Formtextarea} from './ManagePetsHistoryElements';
+        Form,Formfile, FormButtonEliminarHistoria,FormInput,Select,
+       Formtextarea,ColumnCard} from './ManagePetsHistoryElements';
 import Icon1 from '../../images/foundation.svg';
 
 const ManagePetsHistory= ({history,setUpdated,historia,setHistoria,breed}) => {
@@ -14,6 +14,9 @@ const ManagePetsHistory= ({history,setUpdated,historia,setHistoria,breed}) => {
   //actualizo a estado historia los valores que se van a enviar
   const handleChange = ({target: {name,value}})=>
     setHistoria({...historia, [name]:value})
+//para actualizar foto
+const [file, setFile] = useState(null);
+
 
 //eliminar historia
 const handleDelete = id =>{
@@ -45,6 +48,34 @@ const handleUpdate = id =>{
    .then(res=> console.log(res))
 
     setUpdated(true)
+}
+
+//va a traer como en una variable lo que viene del input type file
+const selectedHandler = e =>{
+  setFile(e.target.files[0])
+}
+
+const sendHandler = id =>{
+  //primero se valida para que llegue una foto
+   if(!file){
+     alert('debe seleccionar una foto primero')
+  }
+  alert('bien')
+  //se formatea la foto que llega del formulario
+  const formdata = new FormData()
+  formdata.append('image',file)
+  const requestInit ={
+     method:'PUT',
+     body: formdata
+   }
+  fetch('http://localhost:3500/gestion_mascotas/subirimagenmascota/'+id,requestInit)
+  .then(res => res.json(res))
+  .then(res => console.log(res))
+  .catch(err => {
+    console.error(err);
+  })
+  setFile(null)
+  alert('ARCHIVO CARGADO CON EXITO')
 }
 
   return(
@@ -87,24 +118,27 @@ const handleUpdate = id =>{
                    primary='true' dark='true' smooth={true}
                    duration={500} spy={true}  exact={true}
                    offset={-80} activeClass='active'>
-                   Editar historia
+                  ✏️  Editar historia
                 </FormButtonEditarHistoria>
+                <ColumnCard>
+                <Formfile id="fileinput" onChange={selectedHandler} type='file' name="foto"/>
                 <FormButtonVerMascota
+                  onClick={()=>sendHandler(mascota.id_historia)}
                   onMouseEnter={onHover}  onMouseLeave={onHover}
                   primary='true' dark='true' smooth={true}
                   duration={500} spy={true}  exact={true}
                   offset={-80} activeClass='active'>
-                  Ver historia
+                  📷 Subir foto
                </FormButtonVerMascota>
+               </ColumnCard>
                <FormButtonEliminarHistoria
                     onClick={()=> handleDelete(mascota.id_historia)}
                     onMouseEnter={onHover}  onMouseLeave={onHover}
                     primary='true' dark='true' smooth={true}
                     duration={500} spy={true}  exact={true}
                     offset={-80} activeClass='active' >
-                    Eliminar....
+                     ❌ Eliminar....
                 </FormButtonEliminarHistoria>
-
                 </Card>
               )
             })}

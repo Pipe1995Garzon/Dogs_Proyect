@@ -33,6 +33,11 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  max-width: auto;
+  height: auto;
+`;
+
 
 export const Icon = styled(Link)`
   margin-left: 32px;
@@ -54,8 +59,8 @@ export const Card = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  max-height: 1000px;
-  padding: 30px;
+  max-height: 1100px;
+  padding: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
 
@@ -67,7 +72,7 @@ export const Card = styled.div`
 `;
 
 export const ColumnCard = styled.div`
-  column-count: 3;
+  column-count: 2;
   height: 100px;
 `;
 
@@ -128,6 +133,13 @@ export const H2 = styled.h2`
 export const P = styled.p`
   font-size: 1rem;
   text-align:center;
+`;
+
+export const Formfile  = styled.input`
+  padding: 16px 16px;
+  margin-bottom: 16px;
+  border:none;
+  border-radius: 32px;
 `;
 
 export const FormButtonVerMascota = styled.button`

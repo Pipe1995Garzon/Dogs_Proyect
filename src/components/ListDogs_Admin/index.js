@@ -3,7 +3,7 @@ import Icon1 from '../../images/foundation.svg';
 import {Container,Wrapper,Icon,Card,ListIcon,
         P,ColumnCard,FormButtonVerMascota,
         FormButtonEditar,FormButtonEliminar,
-        FormInput,Formtextarea,Select} from './ListDogsAdminElements';
+        FormInput,Formtextarea,Select,Formfile} from './ListDogsAdminElements';
 import {useAuth} from '../../context/authContext';
 
 const ListDogAdmin = ({breed,vaccine,dogstate,pets,setpetsUpdated,mascota,setMascota}) =>{
@@ -13,12 +13,15 @@ const ListDogAdmin = ({breed,vaccine,dogstate,pets,setpetsUpdated,mascota,setMas
     setHover(!hover)
   }
 
-  //me traigo el usuario que va a realizar la publicacion
-  const{user} = useAuth();
+//me traigo el usuario que va a realizar la publicacion
+const{user} = useAuth();
 
   //actualizo a estado historia los valores que se van a enviar
   const handleChange = ({target: {name,value}})=>
     setMascota({...mascota, [name]:value})
+
+//para actualizar foto
+const [file, setFile] = useState(null);
 
   //eliminar mascota
   const handleDelete = id =>{
@@ -60,6 +63,36 @@ const ListDogAdmin = ({breed,vaccine,dogstate,pets,setpetsUpdated,mascota,setMas
 
       setpetsUpdated(true)
   }
+
+
+  //va a traer como en una variable lo que viene del input type file
+  const selectedHandler = e =>{
+    setFile(e.target.files[0])
+  }
+
+  const sendHandler = id =>{
+    //primero se valida para que llegue una foto
+     if(!file){
+       alert('debe seleccionar una foto primero')
+    }
+    alert('bien')
+    //se formatea la foto que llega del formulario
+    const formdata = new FormData()
+    formdata.append('imagedogs',file)
+    const requestInit ={
+       method:'PUT',
+       body: formdata
+     }
+    fetch('http://localhost:3500/gestion_mascotas/subirimagenmascotadogs/'+id,requestInit)
+    .then(res => res.json(res))
+    .then(res => console.log(res))
+    .catch(err => {
+      console.error(err);
+    })
+    setFile(null)
+    alert('ARCHIVO CARGADO CON EXITO')
+  }
+
 
 
   return(
@@ -135,14 +168,7 @@ const ListDogAdmin = ({breed,vaccine,dogstate,pets,setpetsUpdated,mascota,setMas
                 onChange={handleChange}
                 required
               />
-              <ColumnCard>
-              <FormButtonVerMascota
-                onMouseEnter={onHover}  onMouseLeave={onHover}
-                primary='true' dark='true' smooth={true}
-                duration={500} spy={true}  exact={true}
-                offset={-80} activeClass='active'>
-                Ver historia
-             </FormButtonVerMascota>
+            <ColumnCard>
              <FormButtonEditar
                onClick={()=> handleUpdate(pet.id_dog)}
                onMouseEnter={onHover}  onMouseLeave={onHover}
@@ -158,8 +184,17 @@ const ListDogAdmin = ({breed,vaccine,dogstate,pets,setpetsUpdated,mascota,setMas
                 duration={500} spy={true}  exact={true}
                 offset={-80} activeClass='active' >
                 Eliminar....
-              </FormButtonEliminar>
-              </ColumnCard>
+            </FormButtonEliminar>
+            </ColumnCard>
+            <Formfile id="fileinput" onChange={selectedHandler} type='file' name="foto"/>
+            <FormButtonVerMascota
+              onClick={()=>sendHandler(pet.id_dog)}
+              onMouseEnter={onHover}  onMouseLeave={onHover}
+              primary='true' dark='true' smooth={true}
+              duration={500} spy={true}  exact={true}
+              offset={-80} activeClass='active'>
+              📷 Subir foto
+           </FormButtonVerMascota>
             </Card>
           ))}
         </Wrapper>

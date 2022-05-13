@@ -90,7 +90,7 @@ export const Card = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  max-height: 600px;
+  max-height: 800px;
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
