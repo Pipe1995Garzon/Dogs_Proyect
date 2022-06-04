@@ -52,8 +52,8 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: #01bf71;
-  font-size: 20px;
+  color: #C70039;
+  font-size: 30px;
   line-height: 15px;
   font-weight: bold;
   letter-spacing: 1.4px;
@@ -74,7 +74,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: #34495E;
+  color: #C70039 ;
   transition: all 0.2s ease-in-out;
 
   &:hover{
@@ -94,7 +94,7 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
-  color: #fff;
+  color: #C70039;
   transition: all 0.2s ease-in-out;
 
   &:hover{

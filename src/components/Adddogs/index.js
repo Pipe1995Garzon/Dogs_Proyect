@@ -67,9 +67,6 @@ const handleSubmit = () =>{
                 placeholder="Pelusa"
                 onChange={handleChange}
                 required/>
-              <FormLabel htmlFor='for'>Subir Foto</FormLabel>
-              <Formfile id="fileinput" onChange={handleChange} type='file' name="foto"/>
-              <FormLabel htmlFor='for'>edad mascota</FormLabel>
               <FormInput
                 type="number"
                 name="edad"
@@ -135,7 +132,7 @@ const handleSubmit = () =>{
             <FormInput
               type="number"
               name="numero_contacto"
-              placeholder="312***** necsario"
+              placeholder="312***** requerido"
               onChange={handleChange}
               required
             />

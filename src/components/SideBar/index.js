@@ -10,15 +10,14 @@ const SideBar = ({isOpen,toggle}) =>{
       </Icon>
       <SideBarWrapper>
         <SideBarMenu>
-          <SideBarLink to="about" onClick={toggle}> Informacion </SideBarLink>
-          <SideBarLink to="events" onClick={toggle}> Eventos </SideBarLink>
-          <SideBarLink to="homework" onClick={toggle}> Tareas </SideBarLink>
-          <SideBarLink to="pets_list" onClick={toggle}> Lista de caninos </SideBarLink>
-          <SideBarLink to="app_users"onClick={toggle}> Usuarios App </SideBarLink>
-          <SideBarLink to="sign_up" onClick={toggle}> Registro Administradores </SideBarLink>
+          <SideBarLink to="about" onClick={toggle}> Historias </SideBarLink>
+          <SideBarLink to="discover" onClick={toggle}> Adopta </SideBarLink>
+          <SideBarLink to="services" onClick={toggle}> Objetivos </SideBarLink>
+          <SideBarLink to="register" onClick={toggle}> App </SideBarLink>
+          <SideBarLink to="register"onClick={toggle}> Usuarios App </SideBarLink>
          </SideBarMenu>
         <SideBtnWrap>
-          <SideBarRoute to="/sing_in"> iniciar sesion </SideBarRoute>
+          <SideBarRoute to="/signin"> Ingresar</SideBarRoute>
         </SideBtnWrap>
       </SideBarWrapper>
     </SidebarContainer>

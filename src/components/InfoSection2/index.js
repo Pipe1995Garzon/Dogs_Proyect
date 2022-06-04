@@ -12,8 +12,7 @@ import {InfoContainer,
         BtnWrap,
 
       } from './InfoElements2';
-import { ButtonAdminPictures } from '../ButtonElements';
-import LogoSection from '../../images/Dog4.svg';
+
 const InfoSection2 = ({
   lightBg,id,imgStart,topLine,
   lightText,headline,darkText,description,

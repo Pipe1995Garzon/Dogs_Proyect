@@ -24,7 +24,7 @@ const Welcome = () => {
       </WelcomeBg>
       <WelcomeContent>
         <WelcomeH1>Bienvenido a Dogs......</WelcomeH1>
-        <WelcomeP>Resgistrata tu fundacion y empieza a trabajar con nosotros</WelcomeP>
+        <WelcomeP>Registrate,Publica mascotas, ayuda a una mascota....  </WelcomeP>
       <WelcomeBtnWrapper>
         <Button to="regisfundation" onMouseEnter={onHover}
          onMouseLeave={onHover} primary='true'

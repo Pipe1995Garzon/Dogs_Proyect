@@ -27,7 +27,7 @@ export const Button = styled(LinkR)`
 
 export const ButtonSection2 = styled(LinkR)`
   border-radius: 50px;
-  background: ${({ primary }) => (primary ? '#01BF71' : '#010606')};
+  background: ${({ primary }) => (primary ? '#010606' : '#01BF71')};
   white-space: nowrap;
   padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
   color: ${({ dark }) => (dark ? '#010606' : '#fff')};
@@ -42,7 +42,7 @@ export const ButtonSection2 = styled(LinkR)`
 
  &:hover{
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? '#fff' : '#01BF71')};
+    background: ${({ primary }) => (primary ? '#fff' : '#010606')};
 
   }
 `;
